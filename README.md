@@ -1,1 +1,1 @@
-"# template_express_es6_modules_typescript" 
+template: express mit es6 modules und typescript typescript
