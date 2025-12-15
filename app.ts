@@ -30,6 +30,14 @@ app.use(express.static(path.join(process.cwd(), "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
+app.get("/info", (_req: Request, res: Response) => {
+    res.json({
+        name: "Movies API",
+        version: "1.0.0"
+        // moviesCount: movies.length,
+    });
+});
+
 // catch 404 and forward to error handler
 app.use((req: Request, _res: Response, next: NextFunction) => {
     next(createError(404));

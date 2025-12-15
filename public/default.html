@@ -89,6 +89,8 @@
 <div class="box">
     <h2>API-Informationen</h2>
     <dl>
+        <dt>API-Name</dt>
+        <dd id="applicationname"></dd>
         <dt>Version</dt>
         <dd id="api-version"></dd>
         <dt>Anzahl Filme</dt>
@@ -96,11 +98,10 @@
     </dl>
 </div>
 <script>
-    // --- API-Info laden ---
     fetch("/info")
         .then(res => res.json())
         .then(info => {
-            document.getElementById("api-name").textContent = info.name;
+            document.getElementById("applicationname").textContent = info.name;
             document.getElementById("api-version").textContent = info.version;
             document.getElementById("api-movies-count").textContent = info.moviesCount;
         })
